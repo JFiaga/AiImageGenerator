@@ -5,6 +5,9 @@ module.exports = {
       screens: {
         xs: '480px',
       },
+      colors:{
+        customPurple:'#6469ff'
+      },
       fontFamily: {
         inter: ['Inter var', 'sans-serif'],
       },
