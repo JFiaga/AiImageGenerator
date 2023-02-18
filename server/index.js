@@ -3,15 +3,26 @@ import * as dotenv from 'dotenv'
 import cors from 'cors'
 import connectDB from './db/connect.js'
 
-dotenv.config() // allow us to import variable from .env file
+import postRoute from './routes/post.route.js'
+import dalleRoute from './routes/dalle.route.js'
 
+
+dotenv.config() // allow us to import variable from .env file
 const app = express()
+
+
 app.use(cors())
 app.use(express.json({limit:'50mb'}))
 
 app.get('/', async (req,res) => {
     res.send('hello from dall-e!')
 })
+
+
+app.use('/api/v1/post', postRoute )
+app.use('/api/v1/dalle', dalleRoute )
+
+
 
 const startServer = async () => {
 
